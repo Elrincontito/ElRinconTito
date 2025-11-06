@@ -17,7 +17,46 @@
     *{box-sizing:border-box}
     html,body{margin:0;padding:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}
     a{color:inherit;text-decoration:none}
-    .container{max-width:1200px;margin:0 auto;padding:24px}
+    <script>
+// === BLOQUE AUTOMÁTICO DE PICKS ===
+// Puedes cambiar o añadir más entradas aquí:
+const picks = [
+  {
+    titulo: "LaLiga · Real Sociedad vs Betis",
+    desc: "Ambos con estilos ofensivos, posible over. Betis sufre fuera.",
+    valor: "medio",
+    pick: "+2.5 goles"
+  },
+  {
+    titulo: "MotoGP · Valencia GP",
+    desc: "Acosta sólido en ritmo de carrera, buena tracción en curva lenta.",
+    valor: "alto",
+    pick: "Podio SÍ"
+  },
+  {
+    titulo: "F1 · GP Brasil",
+    desc: "Degradación alta, estrategia clave. Alonso fuerte en tandas largas.",
+    valor: "medio",
+    pick: "Top 6"
+  }
+];
+
+// Pinta las tarjetas automáticamente
+const grid = document.querySelector('#picks .grid3');
+if (grid) {
+  grid.innerHTML = picks.map(p => `
+    <article class="card">
+      <h3 style="margin:0 0 6px;font-size:18px">${p.titulo}</h3>
+      <p style="margin:0 0 8px;color:var(--muted);font-size:14px">${p.desc}</p>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <span class="badge">Valor: ${p.valor}</span>
+      </div>
+      <div style="margin-top:10px;font-weight:700;color:#22d3ee">Pick: ${p.pick}</div>
+    </article>
+  `).join('');
+}
+</script>
+.container{max-width:1200px;margin:0 auto;padding:24px}
     /* Navbar */
     .nav{position:sticky;top:0;z-index:50;background:linear-gradient(180deg, rgba(11,14,18,.95), rgba(11,14,18,.75));backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid #0f172a}
     .nav-row{display:flex;align-items:center;gap:16px}
