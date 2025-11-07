@@ -2,260 +2,48 @@
 <html lang="es">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>El RinconTito — Fútbol, MotoGP, F1, tips y guías</title>
-  <meta name="description" content="El RinconTito: blog personal con tips, guías y análisis sobre fútbol, MotoGP y Fórmula 1. Contenidos gratuitos, claros y con buen rollo." />
-  <meta name="theme-color" content="#0a66c2" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mi página de ejemplo</title>
   <style>
-    :root{
-      --bg:#0b0e12; --card:#121821; --soft:#1a2430; --text:#eaf0f7; --muted:#b7c3d4;
-      --brand:#0a66c2; --accent:#18b7ff; --shadow: 0 10px 25px rgba(0,0,0,.35);
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}
-    a{color:inherit;text-decoration:none}
-    <script>
-// === BLOQUE AUTOMÁTICO DE PICKS ===
-// Puedes cambiar o añadir más entradas aquí:
-const picks = [
-  {
-    titulo: "LaLiga · Real Sociedad vs Betis",
-    desc: "Ambos con estilos ofensivos, posible over. Betis sufre fuera.",
-    valor: "medio",
-    pick: "+2.5 goles"
-  },
-  {
-    titulo: "MotoGP · Valencia GP",
-    desc: "Acosta sólido en ritmo de carrera, buena tracción en curva lenta.",
-    valor: "alto",
-    pick: "Podio SÍ"
-  },
-  {
-    titulo: "F1 · GP Brasil",
-    desc: "Degradación alta, estrategia clave. Alonso fuerte en tandas largas.",
-    valor: "medio",
-    pick: "Top 6"
-  }
-];
-
-// Pinta las tarjetas automáticamente
-const grid = document.querySelector('#picks .grid3');
-if (grid) {
-  grid.innerHTML = picks.map(p => `
-    <article class="card">
-      <h3 style="margin:0 0 6px;font-size:18px">${p.titulo}</h3>
-      <p style="margin:0 0 8px;color:var(--muted);font-size:14px">${p.desc}</p>
-      <div style="display:flex;gap:8px;flex-wrap:wrap">
-        <span class="badge">Valor: ${p.valor}</span>
-      </div>
-      <div style="margin-top:10px;font-weight:700;color:#22d3ee">Pick: ${p.pick}</div>
-    </article>
-  `).join('');
-}
-</script>
-.container{max-width:1200px;margin:0 auto;padding:24px}
-    /* Navbar */
-    .nav{position:sticky;top:0;z-index:50;background:linear-gradient(180deg, rgba(11,14,18,.95), rgba(11,14,18,.75));backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid #0f172a}
-    .nav-row{display:flex;align-items:center;gap:16px}
-    .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.3px}
-    .brand-logo{display:flex;align-items:center;gap:10px}
-    .nav-links{display:flex;gap:14px;flex-wrap:wrap}
-    .nav-links a{padding:10px 12px;border-radius:10px;color:var(--muted)}
-    .nav-links a.active,.nav-links a:hover{color:var(--text);background:var(--soft)}
-    .spacer{flex:1}
-    .btn{cursor:pointer;padding:10px 14px;border-radius:12px;border:1px solid #0f172a;background:var(--brand);color:#fff;font-weight:600;box-shadow:var(--shadow)}
-    .btn.ghost{background:transparent;color:var(--text)}
-    /* Hero */
-    .hero{display:grid;gap:20px;padding:40px 0}
-    .hero h1{font-size:clamp(28px,4vw,48px);line-height:1.05;margin:0}
-    .hero p{color:var(--muted);margin:0 0 10px}
-    .hero-cta{display:flex;gap:12px;flex-wrap:wrap}
-    .hero-card{background:linear-gradient(180deg, #0e1724, #0b1320);border:1px solid #0f172a;border-radius:18px;padding:18px;display:flex;align-items:center;gap:16px}
-    .pill{display:inline-flex;align-items:center;gap:8px;background:rgba(24,183,255,.1);border:1px solid rgba(24,183,255,.2);color:#c8eeff;border-radius:999px;padding:8px 12px;font-size:12px}
-    /* Grids */
-    .grid{display:grid;gap:18px}
-    .grid.cards{grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
-    .card{background:var(--card);border:1px solid #0f172a;border-radius:18px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column}
-    .card .thumb{height:140px;background:linear-gradient(120deg,#0a66c2,#18b7ff);opacity:.9}
-    .card .body{padding:16px}
-    .card .kicker{color:var(--muted);font-size:12px;letter-spacing:.3px}
-    .card h3{margin:8px 0 8px;font-size:18px}
-    .meta{display:flex;gap:10px;color:var(--muted);font-size:12px}
-    .tags{display:flex;gap:8px;flex-wrap:wrap}
-    .tag{font-size:11px;padding:6px 10px;border-radius:999px;border:1px solid #1f2a3a;color:#bcd3ef;background:#111827}
-    /* Section titles */
-    .section-title{display:flex;align-items:center;justify-content:space-between;margin:28px 0 10px}
-    .section-title h2{margin:0;font-size:clamp(18px,2.5vw,26px)}
-    /* Footer */
-    footer{margin-top:40px;border-top:1px solid #0f172a;color:var(--muted)}
-    .foot-grid{display:grid;gap:16px;grid-template-columns:1fr;}
-    @media(min-width:900px){
-      .hero{grid-template-columns:1.2fr .8fr;align-items:center}
-      .foot-grid{grid-template-columns:1fr 1fr}
-    }
-    /* Logo SVG sizing */
-    .logo-wrap{display:flex;align-items:center;gap:12px}
-    .logo-svg{width:64px;height:64px;flex:0 0 64px}
-    .logo-title{display:flex;flex-direction:column;line-height:1}
-    .logo-title .top{font-weight:800;text-transform:uppercase;letter-spacing:.5px;font-size:14px;color:#cfe9ff}
-    .logo-title .bottom{font-weight:800;font-size:18px}
+    body { font-family: system-ui, Arial, sans-serif; line-height: 1.6; padding: 2rem; background:#f7f7f7; }
+    main { max-width: 760px; margin: 0 auto; background:#fff; padding:1.5rem; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.06); }
+    h1, h2 { margin-top: 0; }
+    .editable { padding:0.6rem; border:1px dashed #ccc; border-radius:6px; min-height:3rem; }
   </style>
 </head>
 <body>
-  <!-- NAVBAR -->
-  <nav class="nav">
-<nav class="nav" aria-label="Principal">
-    <div class="container nav-row">
-      <a href="#inicio" class="brand" aria-label="El RinconTito inicio">
-        <span class="logo-wrap">
-          <!-- Logo: trébol de suerte azul con texto encima -->
-          <svg class="logo-svg" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Logo El RinconTito con trébol azul">
-            <defs>
-              <radialGradient id="g" cx="40%" cy="35%" r="80%">
-                <stop offset="0%" stop-color="#5cc8ff"/>
-                <stop offset="60%" stop-color="#0a66c2"/>
-                <stop offset="100%" stop-color="#073a75"/>
-              </radialGradient>
-              <filter id="s" x="-20%" y="-20%" width="140%" height="140%">
-                <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#082747" flood-opacity=".6"/>
-              </filter>
-            </defs>
-            <!-- Texto encima: EL RINCONTITO -->
-            <text x="60" y="20" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="800" fill="#cfe9ff" letter-spacing="1">EL RINCONTITO</text>
-            <!-- Trébol (4 hojas) -->
-            <g filter="url(#s)" transform="translate(60,70)">
-              <path d="M0 -28 C 14 -28, 28 -14, 28 0 C 28 14, 14 28, 0 28 C -14 28, -28 14, -28 0 C -28 -14, -14 -28, 0 -28 Z" fill="url(#g)" transform="rotate(0)"/>
-              <path d="M0 -28 C 14 -28, 28 -14, 28 0 C 28 14, 14 28, 0 28 C -14 28, -28 14, -28 0 C -28 -14, -14 -28, 0 -28 Z" fill="url(#g)" transform="rotate(90)"/>
-              <path d="M0 -28 C 14 -28, 28 -14, 28 0 C 28 14, 14 28, 0 28 C -14 28, -28 14, -28 0 C -28 -14, -14 -28, 0 -28 Z" fill="url(#g)" transform="rotate(180)"/>
-              <path d="M0 -28 C 14 -28, 28 -14, 28 0 C 28 14, 14 28, 0 28 C -14 28, -28 14, -28 0 C -28 -14, -14 -28, 0 -28 Z" fill="url(#g)" transform="rotate(270)"/>
-              <!-- Tallito -->
-              <path d="M2 25 C 10 45, -6 58, -2 70" stroke="#0a66c2" stroke-width="6" fill="none" stroke-linecap="round"/>
-            </g>
-          </svg>
-          <span class="logo-title">
-            <span class="top">PROYECTO</span>
-            <span class="bottom">El RinconTito</span>
-          </span>
-        </span>
-      </a>
-      <div class="nav-links">
-        <a class="active" href="#inicio">Inicio</a>
-        <a href="#futbol">Fútbol</a>
-        <a href="#motogp">MotoGP</a>
-        <a href="#f1">F1</a>
-        <a href="#blog">Blog</a>
-      </div>
-      <div class="spacer"></div>
-      <a class="btn ghost" href="#suscripcion">Suscripción</a>
-    </div>
-  </nav>
+  <main>
+    <h1>Encabezado principal (h1)</h1>
+    <h2>Subencabezado (h2)</h2>
 
-  <!-- HERO -->
-  <header class="container hero" id="inicio">
-    <div>
-      <span class="pill">Proyecto de Javier — Gratis y en abierto</span>
-      <h1>Tips, guías y análisis de <span style="color:var(--accent)">Fútbol</span>, <span style="color:var(--accent)">MotoGP</span> y <span style="color:var(--accent)">F1</span>.</h1>
-      <p>Contenido claro, práctico y sin humo. Estadística ligera, tendencias y aprendizaje continuo. ¡Bienvenido a El RinconTito!</p>
-      <div class="hero-cta">
-        <a class="btn" href="#blog">Ver artículos</a>
-        <a class="btn ghost" href="#suscripcion">Suscribirme (gratis)</a>
-      </div>
-      <div class="hero-card" style="margin-top:16px">
-        <div>
-          <strong>⚠️ Aviso:</strong> La información aquí publicada es educativa. <em>No es</em> recomendación financiera.
-        </div>
-      </div>
-    </div>
-    <div>
-      <div class="card" style="height:100%">
-        <div class="thumb" role="img" aria-label="Banner azul con líneas deportivas"></div>
-        <div class="body">
-          <div class="kicker">Logo / Identidad</div>
-          <h3>Trébol de suerte azul + texto</h3>
-          <p class="meta">Logo SVG integrado: “EL RINCONTITO” arriba y trébol estilizado de 4 hojas.</p>
-          <div class="tags">
-            <span class="tag">Azul corporativo</span>
-            <span class="tag">Moderno</span>
-            <span class="tag">Suerte</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
+    <!-- Párrafo simple -->Buens dias y bienvenidos a mi pagina web 
+    <p>Aquí va tu texto de lectura. Usa la etiqueta <code>&lt;p&gt;</code> para párrafos.</p>
 
-  <!-- SECCIONES TEMÁTICAS -->
-  <section class="container" id="futbol">
-    <div class="section-title"><h2>Fútbol</h2><a class="btn ghost" href="#">Ver todo</a></div>
-    <div class="grid cards">
-      <article class="card"><div class="thumb"></div><div class="body"><div class="kicker">Liga • Data</div><h3>Modelo simple de forma reciente</h3><p>Explicación paso a paso para calcular un índice de forma con tu Excel/Sheets.</p><div class="tags"><span class="tag">Plantilla CSV</span><span class="tag">Descargable</span></div></div></article>
-      <article class="card"><div class="thumb"></div><div class="body"><div class="kicker">Copa • Previa</div><h3>Claves del fin de semana</h3><p>Lesionados, sancionados y rotaciones probables.</p><div class="meta"><span>3 min</span></div></div></article>
-    </div>
-  </section>
+    <!-- Lista -->
+    <ul>
+      <li>Punto 1</li>
+      <li>Punto 2</li>
+      <li>Punto 3</li>
+    </ul>
 
-  <section class="container" id="motogp">
-    <div class="section-title"><h2>MotoGP</h2><a class="btn ghost" href="#">Ver todo</a></div>
-    <div class="grid cards">
-      <article class="card"><div class="thumb"></div><div class="body"><div class="kicker">Análisis</div><h3>Cómo cambia el ritmo con neumáticos medios vs duros</h3><p>Datos de tandas largas y gestión de temperatura.</p></div></article>
-      <article class="card"><div class="thumb"></div><div class="body"><div class="kicker">Pilotos</div><h3>Quartararo en circuitos de stop&go</h3><p>Donde más exprime su estilo y dónde pierde tracción.</p></div></article>
-    </div>
-  </section>
+    <!-- Enlace -->
+    <p>Visita <a href="https://github.com/Elrincontito/ElRinconTito" target="_blank" rel="noopener">tu repositorio</a> si quieres vincular.</p>
 
-  <section class="container" id="f1">
-    <div class="section-title"><h2>Fórmula 1</h2><a class="btn ghost" href="#">Ver todo</a></div>
-    <div class="grid cards">
-      <article class="card"><div class="thumb"></div><div class="body"><div class="kicker">Setup</div><h3>Downforce vs recta: compromisos por circuito</h3><p>Ejemplos visuales y reglas rápidas.</p></div></article>
-      <article class="card"><div class="thumb"></div><div class="body"><div class="kicker">Estrategia</div><h3>Subidas y caídas de rendimiento: cómo leer los stints</h3><p>Cuándo es ritmo y cuándo es neumático.</p></div></article>
-    </div>
-  </section>
+    <!-- Zona editable en el navegador (aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa) -->
+    <h3>Zona editable (bbbbbbbbbbbbbbbbbbbbbbbbbbb)</h3>
+    <div id="editable" class="editable" contenteditable="true">Haz clic aquí y escribe tu texto. Este contenido no se guarda en el servidor, solo es para probar en tu navegador.</div>
 
-  <!-- BLOG -->
-  <section class="container" id="blog">
-    <div class="section-title"><h2>Blog</h2><a class="btn ghost" href="#">RSS</a></div>
-    <div class="grid cards" id="post-list">
-      <article class="card"><div class="thumb"></div><div class="body"><div class="kicker">Novedad</div><h3>Bienvenido a El RinconTito</h3><p>Qué es esto, qué encontrarás y cómo puedes participar.</p><div class="meta"><span>2 min</span></div></div></article>
-    </div>
-  </section>
-
-  <!-- SUSCRIPCIÓN -->
-  <section class="container" id="suscripcion">
-    <div class="section-title"><h2>Suscripción</h2></div>
-    <div class="card">
-      <div class="body">
-        <p>Apúntate para recibir un email cuando publique artículos clave. Sin spam, sin vender datos.</p>
-        <form onsubmit="event.preventDefault();alert('¡Gracias! (Integraremos Buttondown/Netlify Forms más adelante)')">
-          <div style="display:flex;gap:10px;flex-wrap:wrap">
-            <input type="email" required placeholder="tu@email.com" aria-label="Correo" style="flex:1;min-width:240px;padding:12px 14px;border-radius:12px;border:1px solid #1f2a3a;background:#0b0e12;color:#eaf0f7"/>
-            <button class="btn" type="submit">Quiero recibir novedades</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="container">
-    <div class="foot-grid">
-      <div>
-        <div class="brand" style="margin-bottom:8px"><strong>El RinconTito</strong></div>
-        <p>Proyecto personal de Javier. Contenidos gratuitos sobre fútbol, MotoGP y Fórmula 1.</p>
-      </div>
-      <div>
-        <p>Legal & buenas prácticas</p>
-        <ul style="margin:0;padding-left:18px">
-          <li>La información es educativa; no es asesoramiento financiero.</li>
-          <li>Juego responsable: establece límites y respeta tu banca.</li>
-          <li>Verifica fuentes y fechas; los datos cambian rápido.</li>
-        </ul>
-      </div>
-    </div>
-    <p style="margin-top:16px;color:var(--muted)">© <span id="year"></span> El RinconTito. Hecho con cariño.</p>
-  </footer>
+    <!-- Ejemplo con JavaScript para agregar texto dinámicamente -->
+    <h3>Insertar texto con JavaScript</h3>
+    <button id="addText">Agregar texto de ejemplo</button>
+    <div id="jsOutput" style="margin-top:0.5rem;"></div>
+  </main>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('addText').addEventListener('click', function () {
+      const out = document.getElementById('jsOutput');
+      out.textContent = 'Este texto fue añadido con JavaScript: puedes generar contenido dinámico así.';
+    });
   </script>
 </body>
 </html>
