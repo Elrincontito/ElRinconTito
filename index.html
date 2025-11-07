@@ -3,40 +3,40 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Página de ejemplo de Elrincontito - bienvenida y texto editable" />
   <title>Mi página de ejemplo</title>
   <style>
     body { font-family: system-ui, Arial, sans-serif; line-height: 1.6; padding: 2rem; background:#f7f7f7; }
     main { max-width: 760px; margin: 0 auto; background:#fff; padding:1.5rem; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.06); }
     h1, h2 { margin-top: 0; }
     .editable { padding:0.6rem; border:1px dashed #ccc; border-radius:6px; min-height:3rem; }
+    footer { text-align:center; margin-top:1.5rem; color:#666; font-size:0.9rem; }
   </style>
 </head>
 <body>
   <main>
-    <h1>Encabezado principal (h1)</h1>
-    <h2>Subencabezado (h2)</h2>
+    <h1>Encabezado principal</h1>
+    <h2>Subencabezado</h2>
 
-    <!-- Párrafo simple -->Buens dias y bienvenidos a mi pagina web 
-    <p>Aquí va tu texto de lectura. Usa la etiqueta <code>&lt;p&gt;</code> para párrafos.</p>
+    <p>Buenos días y bienvenidos a mi página web.</p>
+    <p>Aquí puedes añadir el texto que quieras. Usa la etiqueta <code>&lt;p&gt;</code> para párrafos.</p>
 
-    <!-- Lista -->
     <ul>
       <li>Punto 1</li>
       <li>Punto 2</li>
       <li>Punto 3</li>
     </ul>
 
-    <!-- Enlace -->
-    <p>Visita <a href="https://github.com/Elrincontito/ElRinconTito" target="_blank" rel="noopener">tu repositorio</a> si quieres vincular.</p>
+    <p>Visita <a href="https://github.com/Elrincontito/ElRinconTito" target="_blank" rel="noopener">mi repositorio</a> si quieres ver el código fuente.</p>
 
-    <!-- Zona editable en el navegador (aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa) -->
-    <h3>Zona editable (bbbbbbbbbbbbbbbbbbbbbbbbbbb)</h3>
+    <h3>Zona editable (prueba)</h3>
     <div id="editable" class="editable" contenteditable="true">Haz clic aquí y escribe tu texto. Este contenido no se guarda en el servidor, solo es para probar en tu navegador.</div>
 
-    <!-- Ejemplo con JavaScript para agregar texto dinámicamente -->
     <h3>Insertar texto con JavaScript</h3>
     <button id="addText">Agregar texto de ejemplo</button>
     <div id="jsOutput" style="margin-top:0.5rem;"></div>
+
+    <footer>© Elrincontito — Página generada desde el repositorio <a href="https://github.com/Elrincontito/ElRinconTito" target="_blank" rel="noopener">ElRinconTito</a></footer>
   </main>
 
   <script>
