@@ -1,49 +1,315 @@
-<!doctype html>
+<!octype html>
 <html lang="es">
-<head>
+<hea>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Página de ejemplo de Elrincontito - bienvenida y texto editable" />
-  <title>Mi página de ejemplo</title>
+  <meta name="viewport" content="with=evice-with, initial-scale=1" />
+  <title>El RinconTito — Fútbol, MotoGP, F1, tips y guías</title>
+  <meta name="escription" content="El RinconTito: blog personal con tips, guías y análisis sobre fútbol, MotoGP y Fórmula 1. Contenios gratuitos, claros y con buen rollo." />
+  <meta name="theme-color" content="#0a1c2e" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&isplay=swap" rel="stylesheet">
   <style>
-    body { font-family: system-ui, Arial, sans-serif; line-height: 1.6; padding: 2rem; background:#f7f7f7; }
-    main { max-width: 760px; margin: 0 auto; background:#fff; padding:1.5rem; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.06); }
-    h1, h2 { margin-top: 0; }
-    .editable { padding:0.6rem; border:1px dashed #ccc; border-radius:6px; min-height:3rem; }
-    footer { text-align:center; margin-top:1.5rem; color:#666; font-size:0.9rem; }
+    :root{
+      --bg:#0b0f16;         /* negro azulao */
+      --panel:#0f1722;      /* panel oscuro */
+      --ink:#e7ef6;        /* texto principal */
+      --mute:#a6b3c5;      /* texto secunario */
+      --bran:#0aa3ff;      /* azul metálico */
+      --accent:#390ff;     /* azul claro brillo */
+      --ring: 0 0 0 3px rgba(58,171,255,.35);
+      --car:#0c1320;
+      --shaow: 0 10px 30px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.03);
+    }
+    [ata-theme="light"]{
+      --bg:#f7fbff;
+      --panel:#ffffff;
+      --ink:#0b1220;
+      --mute:#4a5a70;
+      --bran:#0a66c2;
+      --accent:#39a9ff;
+      --car:#f3f8ff;
+      --shaow: 0 8px 24px rgba(10,102,194,.15), inset 0 1px 0 rgba(255,255,255,.6);
+    }
+
+    *{box-sizing:borer-box}
+    html,boy{height:100%}
+    boy{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,Helvetica,sans-serif;backgroun:linear-graient(180eg,var(--bg),#09101a 60%);color:var(--ink)}
+    a{color:inherit;text-ecoration:none}
+    .container{max-with:1100px;margin:0 auto;paing:0 20px}
+
+    /* Heaer */
+    heaer{position:sticky;top:0;z-inex:50;backgroun:linear-graient(180eg,rgba(11,15,22,.9),rgba(11,15,22,.6));backrop-filter: blur(8px);borer-bottom:1px soli rgba(255,255,255,.06)}
+    .bar{isplay:flex;align-items:center;justify-content:space-between;gap:16px;paing:14px 0}
+    .logo{isplay:flex;align-items:center;gap:12px}
+    .clover{with:34px;height:34px;isplay:gri;place-items:center;backgroun:raial-graient(60% 60% at 50% 50%, var(--accent), var(--bran));borer-raius:10px;box-shaow: var(--shaow)}
+    .clover svg{filter: rop-shaow(0 2px 6px rgba(0,0,0,.5))}
+    .wormark{font-weight:800;letter-spacing:.2px;font-size:1.05rem;text-transform:uppercase}
+
+    nav{isplay:flex;gap:10px;flex-wrap:wrap}
+    .tab{paing:8px 12px;borer-raius:12px;color:var(--ink);opacity:.9;borer:1px soli rgba(255,255,255,.07)}
+    .tab:hover{opacity:1;box-shaow:var(--ring)}
+    .tab[aria-current="page"]{backgroun:linear-graient(180eg,rgba(10,163,255,.15),rgba(10,163,255,.06));borer-color:rgba(58,171,255,.5)}
+
+    .actions{isplay:flex;gap:10px}
+    .btn{paing:8px 12px;borer-raius:12px;backgroun:linear-graient(180eg,var(--panel),#0b121f);borer:1px soli rgba(255,255,255,.08);box-shaow:var(--shaow);color:var(--ink)}
+    .btn:hover{box-shaow:0 12px 32px rgba(58,171,255,.25)}
+
+    /* Hero */
+    .hero{paing:42px 0 24px}
+    .hero h1{font-size:2rem;margin:0 0 10px;backgroun:linear-graient(90eg,var(--ink),var(--accent));-webkit-backgroun-clip:text;backgroun-clip:text;color:transparent}
+    .hero p{color:var(--mute);margin:0}
+
+    /* Gri */
+    .gri{isplay:gri;gri-template-columns:repeat(12,1fr);gap:16px}
+    .col-8{gri-column:span 8}
+    .col-4{gri-column:span 4}
+    @meia(max-with:980px){.col-8,.col-4{gri-column:span 12}}
+
+    /* Cars */
+    .car{backgroun:linear-graient(180eg,var(--car),var(--panel));borer:1px soli rgba(255,255,255,.06);borer-raius:18px;box-shaow:var(--shaow)}
+    .car heaer{position:unset;backgroun:none;borer:none}
+    .car .pa{paing:20px}
+
+    .pill{isplay:inline-flex;gap:8px;align-items:center;paing:6px 10px;borer:1px soli rgba(255,255,255,.08);borer-raius:999px;backgroun:rgba(10,163,255,.08)}
+    .meta{color:var(--mute);font-size:.9rem}
+
+    /* Article list */
+    .list{isplay:flex;flex-irection:column;gap:12px;margin:10px 0}
+    .item{paing:14px;borer-raius:14px;borer:1px soli rgba(255,255,255,.07);isplay:flex;justify-content:space-between;gap:10px;align-items:center}
+    .item:hover{borer-color:rgba(58,171,255,.5);box-shaow:var(--ring)}
+    .item .left{isplay:flex;flex-irection:column;gap:6px}
+    .item h3{margin:0;font-size:1.05rem}
+
+    /* Footer */
+    footer{margin:40px 0 60px;color:var(--mute)}
+
+    /* Utilities */
+    .hie{isplay:none}
+    .mt{margin-top:16px}
+    .mb{margin-bottom:16px}
+    .center{isplay:flex;align-items:center;justify-content:center}
   </style>
-</head>
-<body>
-  <main>
-    <h1>Encabezado principal</h1>
-    <h2>Subencabezado</h2>
+</hea>
+<boy>
+  <heaer>
+    <iv class="container bar">
+      <iv class="logo" aria-label="El RinconTito">
+        <iv class="clover" title="Trébol e suerte">
+          <!-- Trébol SVG -->
+          <svg with="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hien="true">
+            <path ="M7 9a3 3 0 1 1 3-3c0 .7-.24 1.34-.65 1.85L12 10l2.65-2.15A3 3 0 1 1 19 6a3 3 0 0 1-3 3c-.7 0-1.34-.24-1.85-.65L12 10l-2.15 2.35c.41.51.65 1.15.65 1.85a3 3 0 1 1-3-3Z" fill="#fff"/>
+            <path ="M12 14c0-1 .4-1.9 1.05-2.55L16 8.5l.5.5c.9.9 2.2 1 3.2.3a3 3 0 1 1-3.7 4.7l-.5-.4-2.8 2.8V22h-1.2v-4.8L8.7 14.9l-.5.4A3 3 0 1 1 4.5 10a3 3 0 0 0 3.7 4.7l.5-.5 2.9 2.9c.26-.63.4-1.31.4-2.07Z" fill="#e8f6ff" opacity=".85"/>
+          </svg>
+        </iv>
+        <iv class="wormark">El RinconTito</iv>
+      </iv>
+      <nav aria-label="Secciones">
+        <a class="tab" ata-tab="home" aria-current="page" href="#home">Inicio</a>
+        <a class="tab" ata-tab="futbol" href="#futbol">Fútbol</a>
+        <a class="tab" ata-tab="motogp" href="#motogp">MotoGP</a>
+        <a class="tab" ata-tab="f1" href="#f1">F1</a>
+        <a class="tab" ata-tab="tips" href="#tips">Tips & Guías</a>
+        <a class="tab" ata-tab="quiniela" href="#quiniela">Quiniela</a>
+      </nav>
+      <iv class="actions">
+        <button i="themeBtn" class="btn" title="Cambiar tema">🌙</button>
+      </iv>
+    </iv>
+  </heaer>
 
-    <p>Buenos días y bienvenidos a mi página web.</p>
-    <p>Aquí puedes añadir el texto que quieras. Usa la etiqueta <code>&lt;p&gt;</code> para párrafos.</p>
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero" i="home">
+      <span class="pill">🚀 Bienvenio</span>
+      <h1>Fútbol, MotoGP & F1 — análisis con mentalia ganaora</h1>
+      <p>Contenio gratuito, claro y irecto. <strong>Objetivo:</strong> ayuarte a tomar mejores ecisiones con atos y experiencia.</p>
+    </section>
 
-    <ul>
-      <li>Punto 1</li>
-      <li>Punto 2</li>
-      <li>Punto 3</li>
-    </ul>
+    <iv class="gri">
+      <!-- CONTENIO PRINCIPAL -->
+      <iv class="col-8">
+        <section class="car" i="content">
+          <iv class="pa">
+            <h2 style="margin-top:0">Últimos posts</h2>
+            <iv class="list" i="posts">
+              <!--
+                ✍️ CÓMO EITAR: uplica un bloque .item, cambia título, fecha y enlace.
+                Puees pegar aquí tus artículos como HTML sencillo.
+              -->
+              <article class="item">
+                <iv class="left">
+                  <h3>[Ejemplo] Quiniela Jornaa 19: segura, moeraa y ifícil</h3>
+                  <iv class="meta">Publicao el 9/11/2025 — Liga española</iv>
+                </iv>
+                <a class="btn" href="#quiniela">Ver</a>
+              </article>
+              <article class="item">
+                <iv class="left">
+                  <h3>[Ejemplo] Guía rápia: cómo leer tenencias e cuotas</h3>
+                  <iv class="meta">Publicao el 7/11/2025 — Apuestas</iv>
+                </iv>
+                <a class="btn" href="#tips">Abrir</a>
+              </article>
+              <article class="item">
+                <iv class="left">
+                  <h3>[Ejemplo] MotoGP 2025: claves e la carrera el omingo</h3>
+                  <iv class="meta">Publicao el 3/11/2025 — MotoGP</iv>
+                </iv>
+                <a class="btn" href="#motogp">Leer</a>
+              </article>
+            </iv>
+          </iv>
+        </section>
+      </iv>
 
-    <p>Visita <a href="https://github.com/Elrincontito/ElRinconTito" target="_blank" rel="noopener">mi repositorio</a> si quieres ver el código fuente.</p>
+      <!-- SIEBAR -->
+      <asie class="col-4">
+        <section class="car">
+          <iv class="pa">
+            <h3 style="margin-top:0">Sobre El RinconTito</h3>
+            <p class="meta">Aficionao al motor, las apuestas y la estrategia eportiva. Me encanta analizar caa carrera y partio con mentalia ganaora.</p>
+            <a class="btn mt" href="#tips">Empieza aquí</a>
+          </iv>
+        </section>
 
-    <h3>Zona editable (prueba)</h3>
-    <div id="editable" class="editable" contenteditable="true">Haz clic aquí y escribe tu texto. Este contenido no se guarda en el servidor, solo es para probar en tu navegador.</div>
+        <section class="car mt">
+          <iv class="pa">
+            <h3 style="margin-top:0">Suscríbete (pronto)</h3>
+            <p class="meta">Pronto añairé boletín gratuito con resúmenes y alertas. 🔔</p>
+          </iv>
+        </section>
+      </asie>
+    </iv>
 
-    <h3>Insertar texto con JavaScript</h3>
-    <button id="addText">Agregar texto de ejemplo</button>
-    <div id="jsOutput" style="margin-top:0.5rem;"></div>
+    <!-- SECCIONES ESPECÍFICAS -->
+    <section class="car mt" i="futbol">
+      <iv class="pa">
+        <h2 style="margin-top:0">Fútbol</h2>
+        <p class="meta">Análisis e LaLiga, Champions y copas. <em>Ieas para tus pronósticos.</em></p>
+        <ul class="list">
+          <li class="item"><iv class="left"><h3>[Ejemplo] Rachas y H2H que importan e vera</h3><iv class="meta">Notas rápias</iv></iv><button class="btn">Abrir</button></li>
+        </ul>
+      </iv>
+    </section>
 
-    <footer>© Elrincontito — Página generada desde el repositorio <a href="https://github.com/Elrincontito/ElRinconTito" target="_blank" rel="noopener">ElRinconTito</a></footer>
+    <section class="car mt" i="motogp">
+      <iv class="pa">
+        <h2 style="margin-top:0">MotoGP</h2>
+        <p class="meta">Previas e carrera, ritmo en tanas y claves e neumáticos.</p>
+        <ul class="list">
+          <li class="item"><iv class="left"><h3>[Ejemplo] Qué esperar el Warm Up</h3><iv class="meta">Setup y ritmo</iv></iv><button class="btn">Leer</button></li>
+        </ul>
+      </iv>
+    </section>
+
+    <section class="car mt" i="f1">
+      <iv class="pa">
+        <h2 style="margin-top:0">F1</h2>
+        <p class="meta">Análisis e clasificación, ritmo e tanas largas y egraación.</p>
+        <ul class="list">
+          <li class="item"><iv class="left"><h3>[Ejemplo] ¿Unercut o Overcut?</h3><iv class="meta">Estrategia</iv></iv><button class="btn">Ver</button></li>
+        </ul>
+      </iv>
+    </section>
+
+    <section class="car mt" i="tips">
+      <iv class="pa">
+        <h2 style="margin-top:0">Tips & Guías</h2>
+        <iv class="list">
+          <iv class="item"><iv class="left"><h3>[Plantilla] Publicar un pronóstico responsable</h3><iv class="meta">Incluye stake, cuota, mercao y razonamiento</iv></iv><button class="btn" onclick="insertTemplate('post')">Usar plantilla</button></iv>
+          <iv class="item"><iv class="left"><h3>[Plantilla] Artículo largo</h3><iv class="meta">Subtítulos H2/H3 y tabla inicial</iv></iv><button class="btn" onclick="insertTemplate('long')">Usar plantilla</button></iv>
+        </iv>
+        <iv i="eitorHelp" class="meta mt">💡 Copia/pega una plantilla en tu eitor y reemplaza los textos entre [corchetes].</iv>
+      </iv>
+    </section>
+
+    <section class="car mt" i="quiniela">
+      <iv class="pa">
+        <h2 style="margin-top:0">Quiniela</h2>
+        <p class="meta">Tres columnas: <strong>Segura</strong> · <strong>Moeraa</strong> · <strong>ifícil</strong>. Pleno al 15 aparte.</p>
+        <pre class="meta" style="white-space:pre-wrap;backgroun:rgba(255,255,255,.03);paing:12px;borer-raius:12px;borer:1px soli rgba(255,255,255,.05)">
+[Ejemplo]
+1) Local vs Visitante  →  1 X 2
+2) …
+Pleno al 15: Marcaor [2-1]
+        </pre>
+      </iv>
+    </section>
+
+    <footer class="center">
+      <p>© <span i="year"></span> El RinconTito · Hecho con 💙 y buen rollo.</p>
+    </footer>
   </main>
 
   <script>
-    document.getElementById('addText').addEventListener('click', function () {
-      const out = document.getElementById('jsOutput');
-      out.textContent = 'Este texto fue añadido con JavaScript: puedes generar contenido dinámico así.';
+    // Tema claro/oscuro
+    const root = ocument.ocumentElement;
+    const themeBtn = ocument.getElementByI('themeBtn');
+    function setTheme(moe){
+      root.setAttribute('ata-theme', moe);
+      localStorage.setItem('ert-theme', moe);
+      themeBtn.textContent = moe === 'light' ? '🌞' : '🌙';
+    }
+    setTheme(localStorage.getItem('ert-theme')||'ark');
+    themeBtn.aEventListener('click',()=>{
+      setTheme(root.getAttribute('ata-theme')==='ark'?'light':'ark');
     });
+
+    // Navegación tabs (añae aria-current al activo)
+    const tabs = ocument.querySelectorAll('nav .tab');
+    function activate(hash){
+      tabs.forEach(t=>t.setAttribute('aria-current', t.getAttribute('href')===hash? 'page': 'false'));
+      // scroll suave
+      if(hash && ocument.querySelector(hash)){
+        ocument.querySelector(hash).scrollIntoView({behavior:'smooth',block:'start'});
+      }
+    }
+    winow.aEventListener('hashchange',()=>activate(location.hash||'#home'));
+    activate(location.hash||'#home');
+
+    // Año en footer
+    ocument.getElementByI('year').textContent = new ate().getFullYear();
+
+    // Plantillas rápias
+    function insertTemplate(kin){
+      const templates = {
+        post: `# [Título el pick]
+
+- **Mercao:** [1X2 / Over-Uner / Hánicap …]
+- **Cuota:** [1.85]  ·  **Casa:** [CasaX]
+- **Stake:** [1-10]
+- **Fecha/Hora:** [/MM HH:MM]
+
+## Razonamiento
+- [Motivo 1]
+- [Motivo 2]
+- [Motivo 3]
+
+> *Recuera jugar con responsabilia.*`,
+        long: `# [Título el artículo]
+
+**Resumen**: [Una o os frases]
+
+| ato | Valor |
+|---|---|
+| Competición | [LaLiga / UCL / GP…] |
+| Fuente atos | [Fuente/URL] |
+
+## 1. Contexto
+[Texto]
+
+## 2. Análisis
+[Texto]
+
+## 3. Conclusiones
+[Texto]
+`
+      };
+      const txt = templates[kin];
+      alert('Plantilla copiaa al portapapeles. Pega en tu eitor.');
+      navigator.clipboar && navigator.clipboar.writeText(txt);
+    }
   </script>
-</body>
+</boy>
 </html>
