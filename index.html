@@ -1,315 +1,332 @@
-<!octype html>
+<!doctype html>
 <html lang="es">
-<hea>
+<head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="with=evice-with, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>El RinconTito — Fútbol, MotoGP, F1, tips y guías</title>
-  <meta name="escription" content="El RinconTito: blog personal con tips, guías y análisis sobre fútbol, MotoGP y Fórmula 1. Contenios gratuitos, claros y con buen rollo." />
+  <meta name="description" content="El RinconTito: blog personal con tips, guías y análisis sobre fútbol, MotoGP y Fórmula 1. Contenidos gratuitos, claros y con buen rollo." />
   <meta name="theme-color" content="#0a1c2e" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&isplay=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --bg:#0b0f16;         /* negro azulao */
-      --panel:#0f1722;      /* panel oscuro */
-      --ink:#e7ef6;        /* texto principal */
-      --mute:#a6b3c5;      /* texto secunario */
-      --bran:#0aa3ff;      /* azul metálico */
-      --accent:#390ff;     /* azul claro brillo */
-      --ring: 0 0 0 3px rgba(58,171,255,.35);
-      --car:#0c1320;
-      --shaow: 0 10px 30px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.03);
-    }
-    [ata-theme="light"]{
-      --bg:#f7fbff;
-      --panel:#ffffff;
-      --ink:#0b1220;
-      --mute:#4a5a70;
-      --bran:#0a66c2;
-      --accent:#39a9ff;
-      --car:#f3f8ff;
-      --shaow: 0 8px 24px rgba(10,102,194,.15), inset 0 1px 0 rgba(255,255,255,.6);
-    }
-
-    *{box-sizing:borer-box}
-    html,boy{height:100%}
-    boy{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,Helvetica,sans-serif;backgroun:linear-graient(180eg,var(--bg),#09101a 60%);color:var(--ink)}
-    a{color:inherit;text-ecoration:none}
-    .container{max-with:1100px;margin:0 auto;paing:0 20px}
-
-    /* Heaer */
-    heaer{position:sticky;top:0;z-inex:50;backgroun:linear-graient(180eg,rgba(11,15,22,.9),rgba(11,15,22,.6));backrop-filter: blur(8px);borer-bottom:1px soli rgba(255,255,255,.06)}
-    .bar{isplay:flex;align-items:center;justify-content:space-between;gap:16px;paing:14px 0}
-    .logo{isplay:flex;align-items:center;gap:12px}
-    .clover{with:34px;height:34px;isplay:gri;place-items:center;backgroun:raial-graient(60% 60% at 50% 50%, var(--accent), var(--bran));borer-raius:10px;box-shaow: var(--shaow)}
-    .clover svg{filter: rop-shaow(0 2px 6px rgba(0,0,0,.5))}
-    .wormark{font-weight:800;letter-spacing:.2px;font-size:1.05rem;text-transform:uppercase}
-
-    nav{isplay:flex;gap:10px;flex-wrap:wrap}
-    .tab{paing:8px 12px;borer-raius:12px;color:var(--ink);opacity:.9;borer:1px soli rgba(255,255,255,.07)}
-    .tab:hover{opacity:1;box-shaow:var(--ring)}
-    .tab[aria-current="page"]{backgroun:linear-graient(180eg,rgba(10,163,255,.15),rgba(10,163,255,.06));borer-color:rgba(58,171,255,.5)}
-
-    .actions{isplay:flex;gap:10px}
-    .btn{paing:8px 12px;borer-raius:12px;backgroun:linear-graient(180eg,var(--panel),#0b121f);borer:1px soli rgba(255,255,255,.08);box-shaow:var(--shaow);color:var(--ink)}
-    .btn:hover{box-shaow:0 12px 32px rgba(58,171,255,.25)}
-
-    /* Hero */
-    .hero{paing:42px 0 24px}
-    .hero h1{font-size:2rem;margin:0 0 10px;backgroun:linear-graient(90eg,var(--ink),var(--accent));-webkit-backgroun-clip:text;backgroun-clip:text;color:transparent}
-    .hero p{color:var(--mute);margin:0}
-
-    /* Gri */
-    .gri{isplay:gri;gri-template-columns:repeat(12,1fr);gap:16px}
-    .col-8{gri-column:span 8}
-    .col-4{gri-column:span 4}
-    @meia(max-with:980px){.col-8,.col-4{gri-column:span 12}}
-
-    /* Cars */
-    .car{backgroun:linear-graient(180eg,var(--car),var(--panel));borer:1px soli rgba(255,255,255,.06);borer-raius:18px;box-shaow:var(--shaow)}
-    .car heaer{position:unset;backgroun:none;borer:none}
-    .car .pa{paing:20px}
-
-    .pill{isplay:inline-flex;gap:8px;align-items:center;paing:6px 10px;borer:1px soli rgba(255,255,255,.08);borer-raius:999px;backgroun:rgba(10,163,255,.08)}
-    .meta{color:var(--mute);font-size:.9rem}
-
-    /* Article list */
-    .list{isplay:flex;flex-irection:column;gap:12px;margin:10px 0}
-    .item{paing:14px;borer-raius:14px;borer:1px soli rgba(255,255,255,.07);isplay:flex;justify-content:space-between;gap:10px;align-items:center}
-    .item:hover{borer-color:rgba(58,171,255,.5);box-shaow:var(--ring)}
-    .item .left{isplay:flex;flex-irection:column;gap:6px}
+    :root{--bg:#0b0f16;--panel:#0f1722;--ink:#e7edf6;--muted:#a6b3c5;--brand:#0aa3ff;--accent:#39d0ff;--ring:0 0 0 3px rgba(58,171,255,.35);--card:#0c1320;--shadow:0 10px 30px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.03)}
+    [data-theme="light"]{--bg:#f7fbff;--panel:#ffffff;--ink:#0b1220;--muted:#4a5a70;--brand:#0a66c2;--accent:#39a9ff;--card:#f3f8ff;--shadow:0 8px 24px rgba(10,102,194,.15),inset 0 1px 0 rgba(255,255,255,.6)}
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,Helvetica,sans-serif;background:linear-gradient(180deg,var(--bg),#09101a 60%);color:var(--ink)}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1100px;margin:0 auto;padding:0 20px}
+    header{position:sticky;top:0;z-index:50;background:linear-gradient(180deg,rgba(11,15,22,.9),rgba(11,15,22,.6));backdrop-filter: blur(8px);border-bottom:1px solid rgba(255,255,255,.06)}
+    .bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0}
+    .logo{display:flex;align-items:center;gap:12px}
+    .clover{width:34px;height:34px;display:grid;place-items:center;background:radial-gradient(60% 60% at 50% 50%, var(--accent), var(--brand));border-radius:10px;box-shadow: var(--shadow)}
+    .clover svg{filter: drop-shadow(0 2px 6px rgba(0,0,0,.5))}
+    .wordmark{font-weight:800;letter-spacing:.2px;font-size:1.05rem;text-transform:uppercase}
+    nav{display:flex;gap:10px;flex-wrap:wrap}
+    .tab{padding:8px 12px;border-radius:12px;color:var(--ink);opacity:.9;border:1px solid rgba(255,255,255,.07)}
+    .tab:hover{opacity:1;box-shadow:var(--ring)}
+    .tab[aria-current="page"]{background:linear-gradient(180deg,rgba(10,163,255,.15),rgba(10,163,255,.06));border-color:rgba(58,171,255,.5)}
+    .actions{display:flex;gap:10px}
+    .btn{padding:8px 12px;border-radius:12px;background:linear-gradient(180deg,var(--panel),#0b121f);border:1px solid rgba(255,255,255,.08);box-shadow:var(--shadow);color:var(--ink);cursor:pointer}
+    .btn:hover{box-shadow:0 12px 32px rgba(58,171,255,.25)}
+    .hero{padding:42px 0 24px}
+    .hero h1{font-size:2rem;margin:0 0 10px;background:linear-gradient(90deg,var(--ink),var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .hero p{color:var(--muted);margin:0}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+    .col-8{grid-column:span 8}
+    .col-4{grid-column:span 4}
+    @media(max-width:980px){.col-8,.col-4{grid-column:span 12}}
+    .card{background:linear-gradient(180deg,var(--card),var(--panel));border:1px solid rgba(255,255,255,.06);border-radius:18px;box-shadow:var(--shadow)}
+    .card header{position:unset;background:none;border:none}
+    .card .pad{padding:20px}
+    .pill{display:inline-flex;gap:8px;align-items:center;padding:6px 10px;border:1px solid rgba(255,255,255,.08);border-radius:999px;background:rgba(10,163,255,.08)}
+    .meta{color:var(--muted);font-size:.9rem}
+    .list{display:flex;flex-direction:column;gap:12px;margin:10px 0}
+    .item{padding:14px;border-radius:14px;border:1px solid rgba(255,255,255,.07);display:flex;justify-content:space-between;gap:10px;align-items:center}
+    .item:hover{border-color:rgba(58,171,255,.5);box-shadow:var(--ring)}
+    .item .left{display:flex;flex-direction:column;gap:6px}
     .item h3{margin:0;font-size:1.05rem}
-
-    /* Footer */
-    footer{margin:40px 0 60px;color:var(--mute)}
-
-    /* Utilities */
-    .hie{isplay:none}
+    footer{margin:40px 0 60px;color:var(--muted)}
+    .hide{display:none}
     .mt{margin-top:16px}
     .mb{margin-bottom:16px}
-    .center{isplay:flex;align-items:center;justify-content:center}
+    .center{display:flex;align-items:center;justify-content:center}
+    pre.meta{white-space:pre-wrap;background:rgba(255,255,255,.03);padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,.05)}
+    .tools{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
   </style>
-</hea>
-<boy>
-  <heaer>
-    <iv class="container bar">
-      <iv class="logo" aria-label="El RinconTito">
-        <iv class="clover" title="Trébol e suerte">
-          <!-- Trébol SVG -->
-          <svg with="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hien="true">
-            <path ="M7 9a3 3 0 1 1 3-3c0 .7-.24 1.34-.65 1.85L12 10l2.65-2.15A3 3 0 1 1 19 6a3 3 0 0 1-3 3c-.7 0-1.34-.24-1.85-.65L12 10l-2.15 2.35c.41.51.65 1.15.65 1.85a3 3 0 1 1-3-3Z" fill="#fff"/>
-            <path ="M12 14c0-1 .4-1.9 1.05-2.55L16 8.5l.5.5c.9.9 2.2 1 3.2.3a3 3 0 1 1-3.7 4.7l-.5-.4-2.8 2.8V22h-1.2v-4.8L8.7 14.9l-.5.4A3 3 0 1 1 4.5 10a3 3 0 0 0 3.7 4.7l.5-.5 2.9 2.9c.26-.63.4-1.31.4-2.07Z" fill="#e8f6ff" opacity=".85"/>
+</head>
+<body>
+  <header>
+    <div class="container bar">
+      <div class="logo" aria-label="El RinconTito">
+        <div class="clover" title="Trébol de suerte">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M7 9a3 3 0 1 1 3-3c0 .7-.24 1.34-.65 1.85L12 10l2.65-2.15A3 3 0 1 1 19 6a3 3 0 0 1-3 3c-.7 0-1.34-.24-1.85-.65L12 10l-2.15 2.35c.41.51.65 1.15.65 1.85a3 3 0 1 1-3-3Z" fill="#fff"/>
+            <path d="M12 14c0-1 .4-1.9 1.05-2.55L16 8.5l.5.5c.9.9 2.2 1 3.2.3a3 3 0 1 1-3.7 4.7l-.5-.4-2.8 2.8V22h-1.2v-4.8L8.7 14.9l-.5.4A3 3 0 1 1 4.5 10a3 3 0 0 0 3.7 4.7l.5-.5 2.9 2.9c.26-.63.4-1.31.4-2.07Z" fill="#e8f6ff" opacity=".85"/>
           </svg>
-        </iv>
-        <iv class="wormark">El RinconTito</iv>
-      </iv>
+        </div>
+        <div class="wordmark">El RinconTito</div>
+      </div>
       <nav aria-label="Secciones">
-        <a class="tab" ata-tab="home" aria-current="page" href="#home">Inicio</a>
-        <a class="tab" ata-tab="futbol" href="#futbol">Fútbol</a>
-        <a class="tab" ata-tab="motogp" href="#motogp">MotoGP</a>
-        <a class="tab" ata-tab="f1" href="#f1">F1</a>
-        <a class="tab" ata-tab="tips" href="#tips">Tips & Guías</a>
-        <a class="tab" ata-tab="quiniela" href="#quiniela">Quiniela</a>
+        <a class="tab" data-tab="home" aria-current="page" href="#home">Inicio</a>
+        <a class="tab" data-tab="futbol" href="#futbol">Fútbol</a>
+        <a class="tab" data-tab="motogp" href="#motogp">MotoGP</a>
+        <a class="tab" data-tab="f1" href="#f1">F1</a>
+        <a class="tab" data-tab="tips" href="#tips">Tips & Guías</a>
+        <a class="tab" data-tab="quiniela" href="#quiniela">Quiniela</a>
       </nav>
-      <iv class="actions">
-        <button i="themeBtn" class="btn" title="Cambiar tema">🌙</button>
-      </iv>
-    </iv>
-  </heaer>
+      <div class="actions">
+        <button id="themeBtn" class="btn" title="Cambiar tema">🌙</button>
+      </div>
+    </div>
+  </header>
 
   <main class="container">
-    <!-- HERO -->
-    <section class="hero" i="home">
-      <span class="pill">🚀 Bienvenio</span>
-      <h1>Fútbol, MotoGP & F1 — análisis con mentalia ganaora</h1>
-      <p>Contenio gratuito, claro y irecto. <strong>Objetivo:</strong> ayuarte a tomar mejores ecisiones con atos y experiencia.</p>
+    <section class="hero" id="home">
+      <span class="pill">🚀 Bienvenido</span>
+      <h1>Fútbol, MotoGP & F1 — análisis con mentalidad ganadora</h1>
+      <p>Contenido gratuito, claro y directo. <strong>Objetivo:</strong> ayudarte a tomar mejores decisiones con datos y experiencia.</p>
+      <div class="tools">
+        <button class="btn" onclick="addEntry('posts')">➕ Nueva entrada (Inicio)</button>
+      </div>
     </section>
 
-    <iv class="gri">
-      <!-- CONTENIO PRINCIPAL -->
-      <iv class="col-8">
-        <section class="car" i="content">
-          <iv class="pa">
+    <div class="grid">
+      <div class="col-8">
+        <section class="card" id="content">
+          <div class="pad">
             <h2 style="margin-top:0">Últimos posts</h2>
-            <iv class="list" i="posts">
-              <!--
-                ✍️ CÓMO EITAR: uplica un bloque .item, cambia título, fecha y enlace.
-                Puees pegar aquí tus artículos como HTML sencillo.
+            <div class="list" id="posts">
+              <!-- PLANTILLA PARA COPIAR Y PEGAR (Inicio)
+              <article class="item">
+                <div class="left">
+                  <h3>[Título del post]</h3>
+                  <div class="meta">Publicado el [DD/MM/AAAA] — [Etiqueta/Sección]</div>
+                </div>
+                <a class="btn" href="#[ancla]">Leer</a>
+              </article>
               -->
               <article class="item">
-                <iv class="left">
-                  <h3>[Ejemplo] Quiniela Jornaa 19: segura, moeraa y ifícil</h3>
-                  <iv class="meta">Publicao el 9/11/2025 — Liga española</iv>
-                </iv>
+                <div class="left">
+                  <h3>[Ejemplo] Quiniela Jornada 19: segura, moderada y difícil</h3>
+                  <div class="meta">Publicado el 09/11/2025 — Liga española</div>
+                </div>
                 <a class="btn" href="#quiniela">Ver</a>
               </article>
-              <article class="item">
-                <iv class="left">
-                  <h3>[Ejemplo] Guía rápia: cómo leer tenencias e cuotas</h3>
-                  <iv class="meta">Publicao el 7/11/2025 — Apuestas</iv>
-                </iv>
-                <a class="btn" href="#tips">Abrir</a>
-              </article>
-              <article class="item">
-                <iv class="left">
-                  <h3>[Ejemplo] MotoGP 2025: claves e la carrera el omingo</h3>
-                  <iv class="meta">Publicao el 3/11/2025 — MotoGP</iv>
-                </iv>
-                <a class="btn" href="#motogp">Leer</a>
-              </article>
-            </iv>
-          </iv>
+            </div>
+          </div>
         </section>
-      </iv>
+      </div>
 
-      <!-- SIEBAR -->
-      <asie class="col-4">
-        <section class="car">
-          <iv class="pa">
+      <aside class="col-4">
+        <section class="card">
+          <div class="pad">
             <h3 style="margin-top:0">Sobre El RinconTito</h3>
-            <p class="meta">Aficionao al motor, las apuestas y la estrategia eportiva. Me encanta analizar caa carrera y partio con mentalia ganaora.</p>
+            <p class="meta">Aficionado al motor, las apuestas y la estrategia deportiva. Me encanta analizar cada carrera y partido con mentalidad ganadora.</p>
             <a class="btn mt" href="#tips">Empieza aquí</a>
-          </iv>
+          </div>
         </section>
-
-        <section class="car mt">
-          <iv class="pa">
+        <section class="card mt">
+          <div class="pad">
             <h3 style="margin-top:0">Suscríbete (pronto)</h3>
-            <p class="meta">Pronto añairé boletín gratuito con resúmenes y alertas. 🔔</p>
-          </iv>
+            <p class="meta">Pronto añadiré boletín gratuito con resúmenes y alertas. 🔔</p>
+          </div>
         </section>
-      </asie>
-    </iv>
+      </aside>
+    </div>
 
-    <!-- SECCIONES ESPECÍFICAS -->
-    <section class="car mt" i="futbol">
-      <iv class="pa">
+    <!-- FÚTBOL -->
+    <section class="card mt" id="futbol">
+      <div class="pad">
         <h2 style="margin-top:0">Fútbol</h2>
-        <p class="meta">Análisis e LaLiga, Champions y copas. <em>Ieas para tus pronósticos.</em></p>
-        <ul class="list">
-          <li class="item"><iv class="left"><h3>[Ejemplo] Rachas y H2H que importan e vera</h3><iv class="meta">Notas rápias</iv></iv><button class="btn">Abrir</button></li>
+        <p class="meta">Análisis de LaLiga, Champions y copas. <em>Ideas para tus pronósticos.</em></p>
+        <div class="tools"><button class="btn" onclick="addEntry('list-futbol')">➕ Nueva entrada (Fútbol)</button></div>
+        <ul class="list" id="list-futbol">
+          <!-- PLANTILLA PARA COPIAR Y PEGAR (Fútbol)
+          <li class="item">
+            <div class="left">
+              <h3>[Título del artículo de Fútbol]</h3>
+              <div class="meta">[Competición] · Publicado el [DD/MM/AAAA]</div>
+            </div>
+            <a class="btn" href="#futbol">Abrir</a>
+          </li>
+          -->
+          <li class="item"><div class="left"><h3>[Ejemplo] Rachas y H2H que importan de verdad</h3><div class="meta">Notas rápidas</div></div><a class="btn" href="#futbol">Abrir</a></li>
         </ul>
-      </iv>
+      </div>
     </section>
 
-    <section class="car mt" i="motogp">
-      <iv class="pa">
+    <!-- MOTOGP -->
+    <section class="card mt" id="motogp">
+      <div class="pad">
         <h2 style="margin-top:0">MotoGP</h2>
-        <p class="meta">Previas e carrera, ritmo en tanas y claves e neumáticos.</p>
-        <ul class="list">
-          <li class="item"><iv class="left"><h3>[Ejemplo] Qué esperar el Warm Up</h3><iv class="meta">Setup y ritmo</iv></iv><button class="btn">Leer</button></li>
+        <p class="meta">Previas de carrera, ritmo en tandas y claves de neumáticos.</p>
+        <div class="tools"><button class="btn" onclick="addEntry('list-motogp')">➕ Nueva entrada (MotoGP)</button></div>
+        <ul class="list" id="list-motogp">
+          <!-- PLANTILLA PARA COPIAR Y PEGAR (MotoGP)
+          <li class="item">
+            <div class="left">
+              <h3>[Título del artículo de MotoGP]</h3>
+              <div class="meta">[GP/País] · Publicado el [DD/MM/AAAA]</div>
+            </div>
+            <a class="btn" href="#motogp">Leer</a>
+          </li>
+          -->
+          <li class="item"><div class="left"><h3>[Ejemplo] Qué esperar del Warm Up</h3><div class="meta">Setup y ritmo</div></div><a class="btn" href="#motogp">Leer</a></li>
         </ul>
-      </iv>
+      </div>
     </section>
 
-    <section class="car mt" i="f1">
-      <iv class="pa">
+    <!-- F1 -->
+    <section class="card mt" id="f1">
+      <div class="pad">
         <h2 style="margin-top:0">F1</h2>
-        <p class="meta">Análisis e clasificación, ritmo e tanas largas y egraación.</p>
-        <ul class="list">
-          <li class="item"><iv class="left"><h3>[Ejemplo] ¿Unercut o Overcut?</h3><iv class="meta">Estrategia</iv></iv><button class="btn">Ver</button></li>
+        <p class="meta">Análisis de clasificación, tandas largas y degradación.</p>
+        <div class="tools"><button class="btn" onclick="addEntry('list-f1')">➕ Nueva entrada (F1)</button></div>
+        <ul class="list" id="list-f1">
+          <!-- PLANTILLA PARA COPIAR Y PEGAR (F1)
+          <li class="item">
+            <div class="left">
+              <h3>[Título del artículo de F1]</h3>
+              <div class="meta">[Gran Premio] · Publicado el [DD/MM/AAAA]</div>
+            </div>
+            <a class="btn" href="#f1">Ver</a>
+          </li>
+          -->
+          <li class="item"><div class="left"><h3>[Ejemplo] ¿Undercut o Overcut?</h3><div class="meta">Estrategia</div></div><a class="btn" href="#f1">Ver</a></li>
         </ul>
-      </iv>
+      </div>
     </section>
 
-    <section class="car mt" i="tips">
-      <iv class="pa">
+    <!-- TIPS & GUÍAS -->
+    <section class="card mt" id="tips">
+      <div class="pad">
         <h2 style="margin-top:0">Tips & Guías</h2>
-        <iv class="list">
-          <iv class="item"><iv class="left"><h3>[Plantilla] Publicar un pronóstico responsable</h3><iv class="meta">Incluye stake, cuota, mercao y razonamiento</iv></iv><button class="btn" onclick="insertTemplate('post')">Usar plantilla</button></iv>
-          <iv class="item"><iv class="left"><h3>[Plantilla] Artículo largo</h3><iv class="meta">Subtítulos H2/H3 y tabla inicial</iv></iv><button class="btn" onclick="insertTemplate('long')">Usar plantilla</button></iv>
-        </iv>
-        <iv i="eitorHelp" class="meta mt">💡 Copia/pega una plantilla en tu eitor y reemplaza los textos entre [corchetes].</iv>
-      </iv>
+        <p class="meta">Publica picks responsables y guías claras.</p>
+        <div class="tools"><button class="btn" onclick="addEntry('list-tips')">➕ Nueva entrada (Tips)</button></div>
+        <div class="list" id="list-tips">
+          <!-- PLANTILLA PARA COPIAR Y PEGAR (Tip/Pick)
+          <div class="item">
+            <div class="left">
+              <h3>[Título del pick]</h3>
+              <div class="meta">Cuota [1.85] · Casa [CasaX] · Stake [1-10]</div>
+            </div>
+            <a class="btn" href="#tips">Usar</a>
+          </div>
+          -->
+          <div class="item"><div class="left"><h3>[Plantilla] Publicar un pronóstico responsable</h3><div class="meta">Incluye stake, cuota, mercado y razonamiento</div></div><button class="btn" onclick="insertTemplate('post')">Usar plantilla</button></div>
+          <div class="item"><div class="left"><h3>[Plantilla] Artículo largo</h3><div class="meta">Subtítulos H2/H3 y tabla inicial</div></div><button class="btn" onclick="insertTemplate('long')">Usar plantilla</button></div>
+        </div>
+        <div id="editorHelp" class="meta mt">💡 Copia/pega una plantilla en tu editor y reemplaza los textos entre [corchetes].</div>
+      </div>
     </section>
 
-    <section class="car mt" i="quiniela">
-      <iv class="pa">
+    <!-- QUINIELA -->
+    <section class="card mt" id="quiniela">
+      <div class="pad">
         <h2 style="margin-top:0">Quiniela</h2>
-        <p class="meta">Tres columnas: <strong>Segura</strong> · <strong>Moeraa</strong> · <strong>ifícil</strong>. Pleno al 15 aparte.</p>
-        <pre class="meta" style="white-space:pre-wrap;backgroun:rgba(255,255,255,.03);paing:12px;borer-raius:12px;borer:1px soli rgba(255,255,255,.05)">
+        <p class="meta">Tres columnas: <strong>Segura</strong> · <strong>Moderada</strong> · <strong>Difícil</strong>. Pleno al 15 aparte.</p>
+        <div class="tools"><button class="btn" onclick="insertTemplate('quiniela')">➕ Plantilla Quiniela</button></div>
+        <pre class="meta">
 [Ejemplo]
 1) Local vs Visitante  →  1 X 2
 2) …
-Pleno al 15: Marcaor [2-1]
+Pleno al 15: Marcador [2-1]
         </pre>
-      </iv>
+      </div>
     </section>
 
     <footer class="center">
-      <p>© <span i="year"></span> El RinconTito · Hecho con 💙 y buen rollo.</p>
+      <p>© <span id="year"></span> El RinconTito · Hecho con 💙 y buen rollo.</p>
     </footer>
   </main>
 
-  <script>
-    // Tema claro/oscuro
-    const root = ocument.ocumentElement;
-    const themeBtn = ocument.getElementByI('themeBtn');
-    function setTheme(moe){
-      root.setAttribute('ata-theme', moe);
-      localStorage.setItem('ert-theme', moe);
-      themeBtn.textContent = moe === 'light' ? '🌞' : '🌙';
-    }
-    setTheme(localStorage.getItem('ert-theme')||'ark');
-    themeBtn.aEventListener('click',()=>{
-      setTheme(root.getAttribute('ata-theme')==='ark'?'light':'ark');
-    });
+  <!-- Templates invisibles para el botón "Nueva entrada" -->
+  <template id="tpl-posts">
+    <article class="item">
+      <div class="left">
+        <h3>[Título del post]</h3>
+        <div class="meta">Publicado el [DD/MM/AAAA] — [Etiqueta/Sección]</div>
+      </div>
+      <a class="btn" href="#home">Leer</a>
+    </article>
+  </template>
+  <template id="tpl-futbol">
+    <li class="item">
+      <div class="left">
+        <h3>[Título del artículo de Fútbol]</h3>
+        <div class="meta">[Competición] · Publicado el [DD/MM/AAAA]</div>
+      </div>
+      <a class="btn" href="#futbol">Abrir</a>
+    </li>
+  </template>
+  <template id="tpl-motogp">
+    <li class="item">
+      <div class="left">
+        <h3>[Título del artículo de MotoGP]</h3>
+        <div class="meta">[GP/País] · Publicado el [DD/MM/AAAA]</div>
+      </div>
+      <a class="btn" href="#motogp">Leer</a>
+    </li>
+  </template>
+  <template id="tpl-f1">
+    <li class="item">
+      <div class="left">
+        <h3>[Título del artículo de F1]</h3>
+        <div class="meta">[Gran Premio] · Publicado el [DD/MM/AAAA]</div>
+      </div>
+      <a class="btn" href="#f1">Ver</a>
+    </li>
+  </template>
+  <template id="tpl-tips">
+    <div class="item">
+      <div class="left">
+        <h3>[Título del pick]</h3>
+        <div class="meta">Mercado [1X2] · Cuota [1.85] · Casa [CasaX] · Stake [1-10]</div>
+      </div>
+      <a class="btn" href="#tips">Usar</a>
+    </div>
+  </template>
 
-    // Navegación tabs (añae aria-current al activo)
-    const tabs = ocument.querySelectorAll('nav .tab');
-    function activate(hash){
-      tabs.forEach(t=>t.setAttribute('aria-current', t.getAttribute('href')===hash? 'page': 'false'));
-      // scroll suave
-      if(hash && ocument.querySelector(hash)){
-        ocument.querySelector(hash).scrollIntoView({behavior:'smooth',block:'start'});
-      }
-    }
-    winow.aEventListener('hashchange',()=>activate(location.hash||'#home'));
+  <script>
+    const root = document.documentElement;
+    const themeBtn = document.getElementById('themeBtn');
+    function setTheme(mode){root.setAttribute('data-theme', mode);localStorage.setItem('ert-theme', mode);themeBtn.textContent = mode === 'light' ? '🌞' : '🌙';}
+    setTheme(localStorage.getItem('ert-theme')||'dark');
+    themeBtn.addEventListener('click',()=>{setTheme(root.getAttribute('data-theme')==='dark'?'light':'dark')});
+
+    const tabs = document.querySelectorAll('nav .tab');
+    function activate(hash){tabs.forEach(t=>t.setAttribute('aria-current', t.getAttribute('href')===hash? 'page': 'false'));if(hash && document.querySelector(hash)){document.querySelector(hash).scrollIntoView({behavior:'smooth',block:'start'})}}
+    window.addEventListener('hashchange',()=>activate(location.hash||'#home'));
     activate(location.hash||'#home');
 
-    // Año en footer
-    ocument.getElementByI('year').textContent = new ate().getFullYear();
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Plantillas rápias
-    function insertTemplate(kin){
+    function insertTemplate(kind){
       const templates = {
-        post: `# [Título el pick]
-
-- **Mercao:** [1X2 / Over-Uner / Hánicap …]
-- **Cuota:** [1.85]  ·  **Casa:** [CasaX]
-- **Stake:** [1-10]
-- **Fecha/Hora:** [/MM HH:MM]
-
-## Razonamiento
-- [Motivo 1]
-- [Motivo 2]
-- [Motivo 3]
-
-> *Recuera jugar con responsabilia.*`,
-        long: `# [Título el artículo]
-
-**Resumen**: [Una o os frases]
-
-| ato | Valor |
-|---|---|
-| Competición | [LaLiga / UCL / GP…] |
-| Fuente atos | [Fuente/URL] |
-
-## 1. Contexto
-[Texto]
-
-## 2. Análisis
-[Texto]
-
-## 3. Conclusiones
-[Texto]
-`
+        post: `# [Título del pick]\n\n- **Mercado:** [1X2 / Over-Under / Hándicap …]\n- **Cuota:** [1.85]  ·  **Casa:** [CasaX]\n- **Stake:** [1-10]\n- **Fecha/Hora:** [DD/MM HH:MM]\n\n## Razonamiento\n- [Motivo 1]\n- [Motivo 2]\n- [Motivo 3]\n\n> *Recuerda jugar con responsabilidad.*`,
+        long: `# [Título del artículo]\n\n**Resumen**: [Una o dos frases]\n\n| Dato | Valor |\n|---|---|\n| Competición | [LaLiga / UCL / GP…] |\n| Fuente datos | [Fuente/URL] |\n\n## 1. Contexto\n[Texto]\n\n## 2. Análisis\n[Texto]\n\n## 3. Conclusiones\n[Texto]`,
+        quiniela: `# Quiniela — Jornada [XX]\n\n**Fecha límite de sellado:** [DD/MM HH:MM]\n\n## Columna Segura\n1) [Equipo L] vs [Equipo V] → [1/X/2]\n2) ...\n\n## Columna Moderada\n1) ...\n\n## Columna Difícil\n1) ...\n\n**Pleno al 15:** [Marcador L-V] (p.ej. 2-1)`
       };
-      const txt = templates[kin];
-      alert('Plantilla copiaa al portapapeles. Pega en tu eitor.');
-      navigator.clipboar && navigator.clipboar.writeText(txt);
+      const txt = templates[kind];
+      alert('Plantilla copiada al portapapeles. Pega en tu editor.');
+      navigator.clipboard && navigator.clipboard.writeText(txt);
+    }
+
+    // Añadir entradas visuales (no persiste; sirve de guía de copia)
+    function addEntry(listId){
+      const tplId = {
+        'posts':'tpl-posts',
+        'list-futbol':'tpl-futbol',
+        'list-motogp':'tpl-motogp',
+        'list-f1':'tpl-f1',
+        'list-tips':'tpl-tips'
+      }[listId] || 'tpl-posts';
+      const tpl = document.getElementById(tplId);
+      const clone = tpl.content.cloneNode(true);
+      document.getElementById(listId).appendChild(clone);
     }
   </script>
-</boy>
+</body>
 </html>
