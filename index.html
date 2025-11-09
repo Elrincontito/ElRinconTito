@@ -18,7 +18,7 @@
     nav{display:flex;gap:10px;flex-wrap:wrap}
     .tab{padding:8px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.07);text-decoration:none;color:var(--ink)}
     .tab[aria-current="page"]{background:linear-gradient(180deg,rgba(10,163,255,.15),rgba(10,163,255,.06));border-color:rgba(58,171,255,.5)}
-    .card{background:linear-gradient(180deg,#0c1320,#0f1722);border:1px solid rgba(255,255,255,.06);border-radius:18px;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+    .card{background:linear-gradient(180deg,#0c1320,#0f1722);border:1px solid rgba(255,255,255,.06);border-radius:18px;box-shadow:0 10px 30px rgba(0,0,0,.35); margin-top:16px}
     .pad{padding:20px}
     .list{display:flex;flex-direction:column;gap:12px;margin:10px 0}
     .item{padding:14px;border-radius:14px;border:1px solid rgba(255,255,255,.07);display:flex;flex-direction:column;gap:8px}
@@ -28,12 +28,15 @@
     .btn{padding:6px 12px;border-radius:10px;background:linear-gradient(90deg,var(--brand),var(--accent));color:white;text-align:center;width:fit-content;text-decoration:none;font-weight:600}
     .btn:hover{opacity:0.9}
     footer{margin:40px 0 60px;color:#a6b3c5;text-align:center}
+    .back{font-size:.9rem;opacity:.9}
+    /* ancla de destino con offset visual bonito */
+    :target { scroll-margin-top: 90px; }
   </style>
 </head>
 <body>
   <header>
     <div class="container">
-      <nav>
+      <nav aria-label="Secciones">
         <a class="tab" href="#home">Inicio</a>
         <a class="tab" href="#futbol">Fútbol</a>
         <a class="tab" href="#motogp">MotoGP</a>
@@ -49,12 +52,12 @@
     <section id="home" class="card">
       <div class="pad">
         <h2>🏠 Inicio</h2>
-        <p><strong>Bienvenido a El RinconTito</strong>, tu rincón de análisis deportivo, motor y apuestas inteligentes. Aquí se mezcla pasión, datos y algo de intuición para entender cada jornada con mentalidad ganadora.</p>
+        <p><strong>Bienvenido a El RinconTito</strong>, tu rincón de análisis deportivo, motor y apuestas inteligentes. Aquí se mezcla pasión, datos y una pizca de intuición para entender cada jornada con mentalidad ganadora.</p>
       </div>
     </section>
 
     <!-- 🔷 SECCIÓN FÚTBOL -->
-    <section id="futbol" class="card mt">
+    <section id="futbol" class="card">
       <div class="pad">
         <h2>⚽ Fútbol</h2>
         <div class="list">
@@ -63,7 +66,7 @@
           <article class="item">
             <h3>📊 LaLiga: ¿por qué Barcelona ya muestra fisuras defensivas?</h3>
             <div class="meta">Publicado el 14/09/2025 — LaLiga / Data-análisis</div>
-            <p>Tras tres jornadas de la temporada 2025/26, el Barcelona ha concedido 12 “big chances”, el doble que el año anterior. La baja de Íñigo Martínez y una presión menos sincronizada están dejando huecos detrás del doble pivote.</p>
+            <p>Tras tres jornadas de la 25/26, el Barcelona ha concedido 12 “big chances”, el doble que el curso anterior a estas alturas. La baja de un líder defensivo y una presión menos sincronizada abren espacios a la espalda del doble pivote.</p>
             <a class="btn" href="#articulo-liga-data">Leer más</a>
           </article>
           <!-- 🧩 FIN BLOQUE FÚTBOL – LIGA + DATA -->
@@ -72,7 +75,7 @@
           <article class="item">
             <h3>⚔️ Copa del Rey: previas claves del enfrentamiento Barça-Betis</h3>
             <div class="meta">Publicado el 04/04/2025 — Previa / Copa del Rey</div>
-            <p>El Betis llega con seis victorias seguidas y una confianza tremenda. El Barcelona deberá corregir su presión alta si quiere dominar en el Villamarín. Partido de ritmo intenso y poco margen de error.</p>
+            <p>El Betis llega con dinámica positiva y presión coordinada; el Barça necesita ajustar su salida y temporizar mejor la presión para no partirse. Partido de ritmo alto y pocos márgenes.</p>
             <a class="btn" href="#articulo-copa-previa">Leer más</a>
           </article>
           <!-- 🧩 FIN BLOQUE FÚTBOL – COPA DEL REY PREVIA -->
@@ -81,25 +84,25 @@
     </section>
 
     <!-- 🔷 SECCIÓN MOTOGP -->
-    <section id="motogp" class="card mt">
+    <section id="motogp" class="card">
       <div class="pad">
         <h2>🏍️ MotoGP</h2>
         <div class="list">
 
           <!-- 🧩 COMIENZO BLOQUE MOTOGP – SETUP Y RITMO -->
           <article class="item">
-            <h3>⚙️ Setup y ritmo: Márquez y el cambio que lo relanzó en Austria</h3>
+            <h3>⚙️ Setup y ritmo: Márquez y el ajuste que lo relanzó en Austria</h3>
             <div class="meta">Publicado el 17/08/2025 — Setup / MotoGP</div>
-            <p>Marc Márquez consiguió su primera victoria del año tras ajustar la geometría delantera de la Honda, mejorando tracción y confianza en curvas rápidas. Su ritmo fue medio segundo más rápido que el promedio del top-5.</p>
+            <p>Un cambio de geometría delantera dio confianza en frenada y mejoró la tracción a salida de curva. Ritmo medio +0.5 s mejor que el top-5 y última tanda impecable.</p>
             <a class="btn" href="#articulo-motogp-setup">Leer más</a>
           </article>
           <!-- 🧩 FIN BLOQUE MOTOGP – SETUP Y RITMO -->
 
           <!-- 🧩 COMIENZO BLOQUE MOTOGP – CARRERA DOMINGO -->
           <article class="item">
-            <h3>🏁 Domingo de locura en Portimão: Márquez y Bagnaia al límite</h3>
+            <h3>🏁 Domingo en Portimão: dos líderes al límite hasta la última curva</h3>
             <div class="meta">Publicado el 31/10/2025 — Carrera / MotoGP</div>
-            <p>El sprint del domingo fue puro espectáculo. Márquez aprovechó la salida, Bagnaia lo presionó hasta la última curva y ambos terminaron separados por solo 0.089 s. Gran gestión de neumáticos en el tramo final.</p>
+            <p>Salida agresiva, gestión de neumático blando y duelo táctico hasta el último sector. Fotofinish de manual y lectura perfecta del desgaste.</p>
             <a class="btn" href="#articulo-motogp-race">Leer más</a>
           </article>
           <!-- 🧩 FIN BLOQUE MOTOGP – CARRERA DOMINGO -->
@@ -108,16 +111,16 @@
     </section>
 
     <!-- 🔷 SECCIÓN F1 -->
-    <section id="f1" class="card mt">
+    <section id="f1" class="card">
       <div class="pad">
         <h2>🏎️ Fórmula 1</h2>
         <div class="list">
 
           <!-- 🧩 COMIENZO BLOQUE F1 – SETUP Y ESTRATEGIA -->
           <article class="item">
-            <h3>🔧 Estrategia y setup: la doble parada que podría revolucionar la F1</h3>
+            <h3>🔧 Estrategia y setup: la doble parada como game-changer</h3>
             <div class="meta">Publicado el 06/11/2025 — Estrategia / F1</div>
-            <p>Equipos como Ferrari y Mercedes evalúan una nueva normativa que obligaría dos pit-stops. Esto rompería los trenes de DRS y forzaría decisiones tácticas en degradación, ritmo y tráfico.</p>
+            <p>Obligar a dos pit-stops rompería los trenes de DRS y abriría ventanas tácticas de under/overcut. El valor estaría en administrar el tráfico y clavar el out-lap.</p>
             <a class="btn" href="#articulo-f1-setup">Leer más</a>
           </article>
           <!-- 🧩 FIN BLOQUE F1 – SETUP Y ESTRATEGIA -->
@@ -126,7 +129,7 @@
           <article class="item">
             <h3>⏱️ Clasificación y ritmo: el GP de Gran Bretaña 2025 al detalle</h3>
             <div class="meta">Publicado el 05/07/2025 — Clasificación / F1</div>
-            <p>George Russell lideró el viernes con un setup de baja carga que maximizó velocidad punta, pero fue Verstappen quien dominó la carrera gracias a su gestión superior de neumáticos medios en tandas largas.</p>
+            <p>Baja carga para maximizar velocidad punta en quali y gestión fina del medio en carrera marcaron la diferencia. Ritmos convergieron tras la vuelta 30 con aire limpio.</p>
             <a class="btn" href="#articulo-f1-ritmo">Leer más</a>
           </article>
           <!-- 🧩 FIN BLOQUE F1 – CLASIFICACIÓN Y RITMO -->
@@ -135,16 +138,15 @@
     </section>
 
     <!-- 🔷 SECCIÓN TIPS & GUÍAS -->
-    <section id="tips" class="card mt">
+    <section id="tips" class="card">
       <div class="pad">
         <h2>📘 Tips & Guías</h2>
         <div class="list">
-
           <!-- 🧩 COMIENZO BLOQUE TIPS – APUESTA RESPONSABLE -->
           <article class="item">
             <h3>🧠 Cómo interpretar movimientos de cuota y apostar con cabeza</h3>
             <div class="meta">Publicado el 09/11/2025 — Guía / Apuestas</div>
-            <p>Cuando una cuota baja más de 0.20 en la última hora antes del partido, el mercado te está avisando. Aprende a leer tendencias y detectar cuándo el valor ya está absorbido por la casa. Siempre con responsabilidad.</p>
+            <p>Si una cuota baja ≥0.20 cerca del inicio, hay nueva info o flujo de volumen. Aprende a diferenciar correcciones de precio de picos puntuales y a no perseguir valor ya absorbido.</p>
             <a class="btn" href="#articulo-tips-cuotas">Leer más</a>
           </article>
           <!-- 🧩 FIN BLOQUE TIPS – APUESTA RESPONSABLE -->
@@ -153,26 +155,170 @@
     </section>
 
     <!-- 🔷 SECCIÓN QUINIELA -->
-    <section id="quiniela" class="card mt">
+    <section id="quiniela" class="card">
       <div class="pad">
         <h2>🧾 Quiniela</h2>
-        <!-- 🧩 COMIENZO BLOQUE QUINIELA -->
+        <!-- 🧩 COMIENZO BLOQUE QUINIELA (RESUMEN) -->
         <pre class="meta">
 Jornada 20 — 09/11/2025
 
-1) Sevilla vs Betis → 1  
-2) Celta vs Real Sociedad → X  
-3) Rayo vs Real Madrid → 2  
-4) Valencia vs Osasuna → 1  
-5) Las Palmas vs Girona → X  
+1) Sevilla vs Betis → 1
+2) Celta vs Real Sociedad → X
+3) Rayo vs Real Madrid → 2
+4) Valencia vs Osasuna → 1
+5) Las Palmas vs Girona → X
 ...
 Pleno al 15: Villarreal 2-1 Athletic
         </pre>
-        <p>Tres columnas: <strong>Segura</strong> (1), <strong>Moderada</strong> (X) y <strong>Difícil</strong> (2). Modifica libremente según tus pronósticos reales cada jornada.</p>
+        <p>Tres columnas: <strong>Segura</strong> (1) · <strong>Moderada</strong> (X) · <strong>Difícil</strong> (2). Cambia libremente según tu análisis.</p>
         <a class="btn" href="#articulo-quiniela">Leer más</a>
-        <!-- 🧩 FIN BLOQUE QUINIELA -->
+        <!-- 🧩 FIN BLOQUE QUINIELA (RESUMEN) -->
       </div>
     </section>
+
+    <!-- ========================= -->
+    <!--     ARTÍCULOS COMPLETOS   -->
+    <!-- ========================= -->
+
+    <!-- 🧩 COMIENZO ARTÍCULO COMPLETO — FÚTBOL LIGA + DATA -->
+    <section id="articulo-liga-data" class="card">
+      <div class="pad">
+        <h2>📊 LaLiga — Liga + Data</h2>
+        <p class="meta">Publicado el 14/09/2025 · Fuente de datos: tu análisis + informes públicos</p>
+        <h3>1) Contexto</h3>
+        <p>El Barcelona encaja más ocasiones claras que en 24/25. Pressing menos coordinado y demasiadas pérdidas en salida.</p>
+        <h3>2) Indicadores</h3>
+        <ul>
+          <li>xGA acumulado en 3 jornadas: [1.95 → 3.20]</li>
+          <li>Big chances concedidas: [4 → 12]</li>
+          <li>Transiciones recibidas por partido: [6.1 → 9.4]</li>
+        </ul>
+        <h3>3) Claves tácticas</h3>
+        <ul>
+          <li>Ajustar altura de laterales para evitar 2v1 a espaldas.</li>
+          <li>Reducir pérdidas centrales con apoyo del pivote.</li>
+          <li>Mejorar defensa de área en centros laterales.</li>
+        </ul>
+        <a class="back" href="#futbol">← Volver a Fútbol</a>
+      </div>
+    </section>
+    <!-- 🧩 FIN ARTÍCULO COMPLETO — FÚTBOL LIGA + DATA -->
+
+    <!-- 🧩 COMIENZO ARTÍCULO COMPLETO — COPA DEL REY PREVIA -->
+    <section id="articulo-copa-previa" class="card">
+      <div class="pad">
+        <h2>⚔️ Copa del Rey — Previa</h2>
+        <p class="meta">Publicado el 04/04/2025</p>
+        <h3>Cómo llega cada equipo</h3>
+        <ul>
+          <li><strong>Betis:</strong> racha positiva, presión coordinada, buen balón parado.</li>
+          <li><strong>Barça:</strong> necesita ajustar salida y timing de la presión.</li>
+        </ul>
+        <h3>Detalle táctico</h3>
+        <p>Ritmo alto, zonas interiores clave. Importante el duelo en carriles y el primer gol.</p>
+        <a class="back" href="#futbol">← Volver a Fútbol</a>
+      </div>
+    </section>
+    <!-- 🧩 FIN ARTÍCULO COMPLETO — COPA DEL REY PREVIA -->
+
+    <!-- 🧩 COMIENZO ARTÍCULO COMPLETO — MOTOGP SETUP -->
+    <section id="articulo-motogp-setup" class="card">
+      <div class="pad">
+        <h2>⚙️ MotoGP — Setup y ritmo</h2>
+        <p class="meta">Publicado el 17/08/2025</p>
+        <h3>Ajuste clave</h3>
+        <p>Geometría delantera más directa, mejora en frenada y confianza en el giro medio.</p>
+        <h3>Ritmo comparado</h3>
+        <ul>
+          <li>Mejor tanda: [1:24.9 x 6 vueltas]</li>
+          <li>Diferencial al P2: ~0.3 s/vuelta</li>
+        </ul>
+        <a class="back" href="#motogp">← Volver a MotoGP</a>
+      </div>
+    </section>
+    <!-- 🧩 FIN ARTÍCULO COMPLETO — MOTOGP SETUP -->
+
+    <!-- 🧩 COMIENZO ARTÍCULO COMPLETO — MOTOGP CARRERA -->
+    <section id="articulo-motogp-race" class="card">
+      <div class="pad">
+        <h2>🏁 MotoGP — Claves del domingo</h2>
+        <p class="meta">Publicado el 31/10/2025</p>
+        <h3>Salida y gestión</h3>
+        <p>Ataque inicial, conservar goma en el primer tercio y empuje final con referencia de tiempos negativos.</p>
+        <h3>Adelantamientos</h3>
+        <p>Zona crítica T1-T3; apurar frenada con moto estable tras el cambio de geometría.</p>
+        <a class="back" href="#motogp">← Volver a MotoGP</a>
+      </div>
+    </section>
+    <!-- 🧩 FIN ARTÍCULO COMPLETO — MOTOGP CARRERA -->
+
+    <!-- 🧩 COMIENZO ARTÍCULO COMPLETO — F1 SETUP Y ESTRATEGIA -->
+    <section id="articulo-f1-setup" class="card">
+      <div class="pad">
+        <h2>🔧 F1 — Setup y estrategia</h2>
+        <p class="meta">Publicado el 06/11/2025</p>
+        <h3>Idea táctica</h3>
+        <p>Dos paradas forzadas abren juego de compuestos y evitan trenes largos. Valor en under/overcut con tráfico controlado.</p>
+        <h3>Puntos finos</h3>
+        <ul>
+          <li>Clavar la ventana de parada con aire limpio</li>
+          <li>Guardar un set rápido para el último stint</li>
+        </ul>
+        <a class="back" href="#f1">← Volver a F1</a>
+      </div>
+    </section>
+    <!-- 🧩 FIN ARTÍCULO COMPLETO — F1 SETUP Y ESTRATEGIA -->
+
+    <!-- 🧩 COMIENZO ARTÍCULO COMPLETO — F1 CLASIFICACIÓN Y RITMO -->
+    <section id="articulo-f1-ritmo" class="card">
+      <div class="pad">
+        <h2>⏱️ F1 — Clasificación y ritmo</h2>
+        <p class="meta">Publicado el 05/07/2025</p>
+        <h3>Qualy vs Carrera</h3>
+        <p>Low-drag para quali, pero en carrera mandó la gestión del medio con tandas estables y menos blistering.</p>
+        <h3>Detalle numérico</h3>
+        <ul>
+          <li>Delta medio stint 2: [-0.18 s/vuelta]</li>
+          <li>Caída de ritmo en últimas 8 vueltas: [+0.25 s/vuelta]</li>
+        </ul>
+        <a class="back" href="#f1">← Volver a F1</a>
+      </div>
+    </section>
+    <!-- 🧩 FIN ARTÍCULO COMPLETO — F1 CLASIFICACIÓN Y RITMO -->
+
+    <!-- 🧩 COMIENZO ARTÍCULO COMPLETO — TIPS -->
+    <section id="articulo-tips-cuotas" class="card">
+      <div class="pad">
+        <h2>🧠 Tips — Leer cuotas sin perseguir el precio</h2>
+        <p class="meta">Publicado el 09/11/2025</p>
+        <h3>Reglas simples</h3>
+        <ul>
+          <li>No entrar tarde: si el valor ya voló, busca otro mercado.</li>
+          <li>Filtra ruido: confirma con volumen y varias casas.</li>
+          <li>Responsabilidad: stake bajo cuando la info es parcial.</li>
+        </ul>
+        <a class="back" href="#tips">← Volver a Tips & Guías</a>
+      </div>
+    </section>
+    <!-- 🧩 FIN ARTÍCULO COMPLETO — TIPS -->
+
+    <!-- 🧩 COMIENZO ARTÍCULO COMPLETO — QUINIELA -->
+    <section id="articulo-quiniela" class="card">
+      <div class="pad">
+        <h2>🧾 Quiniela — Jornada 20</h2>
+        <p class="meta">Publicado el 09/11/2025</p>
+        <h3>Columna Segura</h3>
+        <pre class="meta">1) [1] · 2) [1] · 3) [X] · 4) [1] · 5) [X] · ...</pre>
+        <h3>Columna Moderada</h3>
+        <pre class="meta">1) [1] · 2) [X] · 3) [2] · 4) [1] · 5) [X] · ...</pre>
+        <h3>Columna Difícil</h3>
+        <pre class="meta">1) [2] · 2) [X] · 3) [2] · 4) [X] · 5) [2] · ...</pre>
+        <h3>Pleno al 15</h3>
+        <p class="meta">Villarreal [2] – [1] Athletic</p>
+        <a class="back" href="#quiniela">← Volver a Quiniela</a>
+      </div>
+    </section>
+    <!-- 🧩 FIN ARTÍCULO COMPLETO — QUINIELA -->
 
     <footer>
       <p>© <span id="year"></span> El RinconTito · Hecho con 💙 y buen rollo.</p>
@@ -181,6 +327,13 @@ Pleno al 15: Villarreal 2-1 Athletic
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+    // Marca tab activa por hash
+    const tabs = document.querySelectorAll('nav .tab');
+    function activate(hash){
+      tabs.forEach(t=>t.setAttribute('aria-current', (t.getAttribute('href')===hash)?'page':'false'));
+    }
+    window.addEventListener('hashchange', ()=>activate(location.hash||'#home'));
+    activate(location.hash||'#home');
   </script>
 </body>
 </html>
