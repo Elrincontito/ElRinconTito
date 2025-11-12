@@ -21,12 +21,12 @@
     }
     header {
       text-align: center;
-      padding: 2rem 1rem;
+      padding: 2rem 1rem 1rem 1rem;
       border-bottom: 1px solid rgba(255,255,255,0.1);
     }
     header h1 {
       font-size: 2.5rem;
-      margin: 0;
+      margin: 0.5rem 0 0 0;
       font-weight: 800;
       color: #0a66c2;
       text-shadow: 0 0 10px rgba(10,102,194,0.6);
@@ -50,6 +50,21 @@
       margin: 0 auto;
     }
 
+    section {
+      margin-bottom: 2.5rem;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      padding: 1.5rem 1.8rem;
+      backdrop-filter: blur(6px);
+    }
+
+    section h2 {
+      color: #0a66c2;
+      margin-top: 0;
+      text-shadow: 0 0 6px rgba(10,102,194,0.5);
+    }
+
     footer {
       text-align: center;
       padding: 1rem;
@@ -57,11 +72,31 @@
       opacity: .8;
       font-size: .9rem;
     }
+
+    svg {
+      width: 80px;
+      height: 80px;
+      filter: drop-shadow(0 0 10px rgba(10,102,194,0.6));
+    }
   </style>
 </head>
 <body>
   <header>
-    <h1>🍀 El RinconTito</h1>
+    <!-- Trébol azul metálico con texto TITO -->
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="50" cy="50" r="48" fill="url(#metal)" stroke="#0a66c2" stroke-width="3"/>
+      <path d="M50 18 C42 10,25 15,25 30 C25 45,42 45,50 35 C58 45,75 45,75 30 C75 15,58 10,50 18 Z" fill="#0a66c2" opacity="0.85"/>
+      <path d="M50 82 C58 90,75 85,75 70 C75 55,58 55,50 65 C42 55,25 55,25 70 C25 85,42 90,50 82 Z" fill="#0a66c2" opacity="0.85"/>
+      <text x="50%" y="54%" text-anchor="middle" fill="#fff" font-size="22" font-weight="800" font-family="Inter">TITO</text>
+      <defs>
+        <radialGradient id="metal" cx="50%" cy="40%" r="60%">
+          <stop offset="0%" stop-color="#0a66c2"/>
+          <stop offset="70%" stop-color="#0a1c2e"/>
+          <stop offset="100%" stop-color="#000"/>
+        </radialGradient>
+      </defs>
+    </svg>
+    <h1>El RinconTito</h1>
     <nav>
       <a href="#futbol">Fútbol</a>
       <a href="#f1">F1</a>
@@ -71,32 +106,45 @@
   </header>
 
   <main>
+    <!-- BLOQUE INTRO -->
     <section id="intro">
       <h2>Bienvenido al rincón de Tito 🧠⚽🏎️🏍️</h2>
-      <p>
-        Aquí encontrarás pronósticos, análisis, estrategias y reflexiones sobre el mundo del deporte y las apuestas.  
-        Todo con el toque personal de <strong>El RinconTito</strong>: pasión, estrategia y buen rollo.
-      </p>
+      <p>Aquí podrás escribir libremente tu presentación personal o un texto de bienvenida. 
+      Ejemplo: “Soy Tito, apasionado del motor y las quinielas. Este es mi rincón donde analizo fútbol, Fórmula 1 y MotoGP con estrategia, humor y datos.”</p>
     </section>
 
+    <!-- BLOQUE FUTBOL -->
     <section id="futbol">
       <h2>⚽ Fútbol</h2>
-      <p>Noticias, quinielas y pronósticos de La Liga, Champions y más.</p>
+      <p>✍️ Escribe aquí tus análisis de partidos, quinielas o pronósticos. Puedes usar <strong>HTML</strong> básico:</p>
+      <ul>
+        <li><strong>Ejemplo:</strong> Real Madrid vs Rayo → favorito el Madrid, pero valor en la X.</li>
+        <li><em>Cuotas que bajan</em> = apuesta con tendencia fuerte.</li>
+      </ul>
+      <p>Puedes añadir más párrafos o listas cuando quieras.</p>
     </section>
 
+    <!-- BLOQUE FORMULA 1 -->
     <section id="f1">
       <h2>🏎️ Fórmula 1</h2>
-      <p>Análisis de carreras, pilotos y rendimiento de equipos.</p>
+      <p>✍️ Añade tus comentarios o crónicas aquí. Por ejemplo:</p>
+      <p>“Gran carrera de Alonso en Suzuka, Mercedes con estrategia conservadora, Red Bull dominando ritmo.”</p>
+      <p>Puedes insertar imágenes subidas a <code>assets/img/</code> así:</p>
+      <pre>&lt;img src="assets/img/f1foto.jpg" alt="Resumen F1" style="width:100%;border-radius:12px;"&gt;</pre>
     </section>
 
+    <!-- BLOQUE MOTOGP -->
     <section id="motogp">
       <h2>🏍️ MotoGP</h2>
-      <p>Todo sobre el mundial, pilotos españoles y sorpresas del paddock.</p>
+      <p>✍️ Aquí puedes escribir tus análisis de pilotos, carreras y tendencias. 
+      Ejemplo: “Pedro Acosta promete, Quartararo mejora en curvas lentas, ojo a la meteorología en Qatar.”</p>
     </section>
 
+    <!-- BLOQUE BLOG -->
     <section id="blog">
-      <h2>📰 Blog</h2>
-      <p>Tips, guías y curiosidades que voy compartiendo semana a semana.</p>
+      <h2>📰 Blog / Tips y Guías</h2>
+      <p>✍️ Aquí puedes escribir artículos sobre apuestas, estrategias, comparativas, o cualquier cosa que quieras publicar.</p>
+      <p><strong>Ejemplo:</strong> Cómo interpretar una bajada de cuota antes de cerrar la jornada.</p>
     </section>
   </main>
 
